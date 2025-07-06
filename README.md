@@ -7,7 +7,7 @@ This project implements efficient polynomial evaluation and multiplication using
 
 The project is divided into three main tasks:
 
-- **Task 1:** Evaluate a polynomial using Horner's rule as a baseline (O(n²)).
+- **Task 1:** Evaluate a polynomial using Horner's rule as a baseline.
 - **Task 2:** Implement the FFT and inverse FFT (IFFT) to evaluate polynomials and recover coefficients.
 - **Task 3:** Multiply polynomials using FFT-based convolution for significant performance improvement.
 
@@ -37,7 +37,7 @@ The program reads polynomial coefficients from input files, performs specified o
 ```mermaid
 graph LR
     A[Polynomial Coefficients]
-    B[Iterative Evaluation (O(n²))]
+    B[Iterative Evaluation]
     C[Final Evaluated Value]
 
     A --> B --> C
@@ -51,8 +51,8 @@ graph LR
 graph TD
     A[Input Polynomial Coefficients]
     B[Split into Even and Odd Indices]
-    C[FFT on Even Coefficients (Recursion)]
-    D[FFT on Odd Coefficients (Recursion)]
+    C[FFT on Even Coefficients]
+    D[FFT on Odd Coefficients]
     E[Combine with Roots of Unity]
     F[Frequency Domain Representation]
 
@@ -72,11 +72,11 @@ graph TD
 graph LR
     A[Polynomial A]
     B[Polynomial B]
-    C[FFT(A)]
-    D[FFT(B)]
-    E[Point-wise Multiply FFTs]
-    F[Inverse FFT of Product]
-    G[Final Product Polynomial]
+    C[FFT of A]
+    D[FFT of B]
+    E[Point-wise Multiply]
+    F[Inverse FFT]
+    G[Final Product]
 
     A --> C
     B --> D
@@ -103,10 +103,4 @@ graph LR
 - The first number in input lines is treated as real part, the second as imaginary.
 - Sign issues may occur with zero coefficients in output.
 
----
 
-## Conclusion
-
-This project demonstrates how FFT drastically improves polynomial operations efficiency. It provides a modular, extensible Python implementation with support for complex coefficients.
-
----
